@@ -1,0 +1,171 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Farm = Instance.new("TextButton")
+local Small = Instance.new("TextButton")
+local CheckDW = Instance.new("TextButton")
+local EquipDW = Instance.new("TextButton")
+local EquipDB = Instance.new("TextButton")
+local SPS = Instance.new("TextButton")
+local FPS = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(142, 255, 255)
+Main.Position = UDim2.new(0.29302898, 0, 0.313967854, 0)
+Main.Size = UDim2.new(0, 626, 0, 346)
+Main.Active = true
+Main.Draggable = true
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(161, 255, 20)
+TextLabel.Size = UDim2.new(0, 626, 0, 66)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Ashplayesbrb Farm"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 35.000
+
+Farm.Name = "Farm"
+Farm.Parent = Main
+Farm.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+Farm.Position = UDim2.new(0, 0, 0.190751448, 0)
+Farm.Size = UDim2.new(0, 175, 0, 50)
+Farm.Font = Enum.Font.SourceSans
+Farm.Text = "Farm"
+Farm.TextColor3 = Color3.fromRGB(0, 0, 0)
+Farm.TextSize = 35.000
+Farm.MouseButton1Click:Connect(function()
+	if Farm.Text == ("Farm") then
+		Farm.Text = ("Stop") else
+		Farm.Text =("Farm") 
+	end
+	while Farm.Text == ("Stop") do
+		wait(0.5)
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Tool") and v.Name == ("Double Weight") or v.Name == ("Dumbell") then
+				v:Activate()
+			end
+		end
+	end
+end)
+
+Small.Name = "Small"
+Small.Parent = Main
+Small.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+Small.Position = UDim2.new(0.720447302, 0, 0.190751448, 0)
+Small.Size = UDim2.new(0, 175, 0, 50)
+Small.Font = Enum.Font.SourceSans
+Small.Text = "Small"
+Small.TextColor3 = Color3.fromRGB(0, 0, 0)
+Small.TextSize = 35.000
+Small.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/MMWEdGe2"))() 
+end)
+
+CheckDW.Name = "Check DW"
+CheckDW.Parent = Main
+CheckDW.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+CheckDW.Position = UDim2.new(0, 0, 0.523121357, 0)
+CheckDW.Size = UDim2.new(0, 175, 0, 50)
+CheckDW.Font = Enum.Font.SourceSans
+CheckDW.Text = "Check DW"
+CheckDW.TextColor3 = Color3.fromRGB(0, 0, 0)
+CheckDW.TextSize = 35.000
+CheckDW.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/5eGDpNVq"))() 
+end)
+
+EquipDW.Name = "Equip DW"
+EquipDW.Parent = Main
+EquipDW.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+EquipDW.Position = UDim2.new(0.720447302, 0, 0.523121357, 0)
+EquipDW.Size = UDim2.new(0, 175, 0, 50)
+EquipDW.Font = Enum.Font.SourceSans
+EquipDW.Text = "Equip DW"
+EquipDW.TextColor3 = Color3.fromRGB(0, 0, 0)
+EquipDW.TextSize = 35.000
+EquipDW.MouseButton1Click:Connect(function()
+	if EquipDW.Text == ("Equip DW") then
+		EquipDW.Text = ("DW Equipped") else
+		EquipDW.Text =("Equip DW") 
+	end
+	while EquipDW.Text == ("DW Equipped") do
+		wait(0.01)
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if  v.Name == ("Double Weight")  then
+				v.Parent = game.Players.LocalPlayer.Character
+			end
+		end
+	end
+	wait()
+	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if  v.Name == ("Double Weight")  then
+			v.Parent = game.Players.LocalPlayer.Backpack
+		end
+	end
+end)  
+
+EquipDB.Name = "Equip DB"
+EquipDB.Parent = Main
+EquipDB.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+EquipDB.Position = UDim2.new(0, 0, 0.855491281, 0)
+EquipDB.Size = UDim2.new(0, 175, 0, 50)
+EquipDB.Font = Enum.Font.SourceSans
+EquipDB.Text = "Equip DB"
+EquipDB.TextColor3 = Color3.fromRGB(0, 0, 0)
+EquipDB.TextSize = 35.000
+EquipDB.MouseButton1Click:Connect(function()
+	if EquipDB.Text == ("Equip DB") then
+		EquipDB.Text = ("DB Equipped") else
+		EquipDB.Text =("Equip DB") 
+	end
+	while EquipDB.Text == ("DB Equipped") do
+		wait(0.1)
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if  v.Name == ("Dumbell")  then
+				v.Parent = game.Players.LocalPlayer.Character
+			end
+		end
+	end
+	wait()
+	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if  v.Name == ("DumBell")  then
+			v.Parent = game.Players.LocalPlayer.Backpack
+		end
+	end
+end)
+
+SPS.Name = "SPS"
+SPS.Parent = Main
+SPS.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+SPS.Position = UDim2.new(0.720447302, 0, 0.855491281, 0)
+SPS.Size = UDim2.new(0, 175, 0, 50)
+SPS.Font = Enum.Font.SourceSans
+SPS.Text = "SPS"
+SPS.TextColor3 = Color3.fromRGB(0, 0, 0)
+SPS.TextSize = 35.000
+SPS.MouseButton1Down:connect(function()
+	loadstring(game:GetObjects("rbxassetid://8326985509")[1].Source)() 
+end)
+
+FPS.Name = "FPS"
+FPS.Parent = Main
+FPS.BackgroundColor3 = Color3.fromRGB(164, 255, 60)
+FPS.Position = UDim2.new(0.359424949, 0, 0.690751433, 0)
+FPS.Size = UDim2.new(0, 175, 0, 50)
+FPS.Font = Enum.Font.SourceSans
+FPS.Text = "FPS"
+FPS.TextColor3 = Color3.fromRGB(0, 0, 0)
+FPS.TextSize = 35.000
+FPS.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/VSjtWEDe"))() 
+end)
